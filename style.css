@@ -1,11 +1,21 @@
  .row{
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+ }
+ h1{
+     font-size: 40px;
+
+}
+ .half-width{
+    display: flex;
+    justify-content: center;
+ }
+
+ .camera-img{
+     width: 60%;
  }
  .col-1{
-     flex-basis: 40%;
-     position: relative;
+     margin-left: 10px;
  }
 .link-button{
         background-color: rgb(146, 5, 52);
@@ -30,9 +40,8 @@
      -------------- */
     .courses{
     display: grid;
-    grid-template-columns: repeat(3, 2fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 25px;
-
      }
      
     .course{
@@ -41,22 +50,23 @@
      background-color: whitesmoke;
     }
     .course img{
-        margin: 50px;
+        padding: 15px;
+        width: 90%;
     }
     .course-detail{
         margin-left: 50px;
     }
-    
-
-      .course-info{
-   
-     align-items: center;
-     justify-content: space-between;
-     }
-        .course-banner{
-        image-l
-        }
+    .course-banner{
+        display: flex;
+        justify-content: center;
     }
+
+    .course-info{
+   
+    align-items: center;
+    justify-content: space-between;
+    }
+
     .fa-star{
         font-size: 12px;
     }
@@ -73,22 +83,51 @@
         background-color: hsl(207, 69%, 23%);
         color: white;
         text-align: center;
+        width: 100%;
     }
    .end{
        display: flex;
-       margin-left: 47%;
-       height: 20px;
-       width: 20px;
+       justify-content:center;
    }
    .in{
        margin-left: 5px;
+       height: 20px;
+       width: 20px;
    }
+   .abcd{
+       text-align: right ;
+
+   }
+   .efg{
+       text-decoration: none;
+       color: darkred;
+   }
+   
    /* Media Queries */
+   
    /* Mobile Devices */
+   
    @media only screen and (max-width:688px) {
        .container{
            width: 100%;
            flex-direction: column;
            grid-template-columns: repeat(1, 1fr );
        }
+       .courses{
+        /* grid-template-columns: repeat(1, minmax(0, 1fr)); */
+        display: flex;
+        flex-direction: column;
+         }
+         .row{
+             display: flex;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
    }
+/* Tab */
+   @media only screen and (max-width:1024px) {
+    .courses{
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+}
